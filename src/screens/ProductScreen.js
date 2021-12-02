@@ -95,8 +95,8 @@ function ProductScreen({ match, history }) {
                                                     {
                                  
                                                         [...Array(product.countInStock).keys()].map((x) =>(
-                                                            <option key={x+1} value={x+1}>
-                                                                {x+1}
+                                                            <option key={x + 1} value={x + 1}>
+                                                                {x + 1}
                                                             </option>                  
                                                         ))
                                                     }
