@@ -1,52 +1,51 @@
-import axios from 'axios'
-import { 
-    PRODUCT_LIST_REQUEST,
-    PRODUCT_LIST_SUCCESS,
-    PRODUCT_LIST_FAIL,
+import axios from "axios";
+import {
+  PRODUCT_LIST_REQUEST,
+  PRODUCT_LIST_SUCCESS,
+  PRODUCT_LIST_FAIL,
+  PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_SUCCESS,
+  PRODUCT_DETAILS_FAIL,
+} from "../constans/productConstans";
 
-    PRODUCT_DETAILS_REQUEST,
-    PRODUCT_DETAILS_SUCCESS,
-    PRODUCT_DETAILS_FAIL
- } from '../constans/productConstans'
+export const listProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_LIST_REQUEST });
 
- export const listProducts = () => async (dispatch) => {
-    try{
-        dispatch({type:PRODUCT_LIST_REQUEST})
+    const { data } = await axios.get("/api/products/");
 
-        const { data } = await axios.get('/api/products/')
+    dispatch({
+      type: PRODUCT_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_LIST_FAIL,
+      payload:
+        error.respose && error.response.data.detail
+          ? error.response.data.detail
+          : error.detail,
+    });
+  }
+};
 
-        dispatch({
-            type:PRODUCT_LIST_SUCCESS,
-            payload: data
-        })
+export const listProductDetails = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    }catch(error){
-        dispatch({
-            type:PRODUCT_LIST_FAIL,
-            payload:error.respose && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-        })
-    }
- }
+    const { data } = await axios.get(`/api/products/${id}`);
 
- export const listProductDetails = (id) => async (dispatch) => {
-    try{
-        dispatch({type:PRODUCT_DETAILS_REQUEST})
-
-        const { data } = await axios.get(`/api/products/${id}`)
-
-        dispatch({
-            type:PRODUCT_DETAILS_SUCCESS,
-            payload: data
-        })
-
-    }catch(error){
-        dispatch({
-            type:PRODUCT_DETAILS_FAIL,
-            payload:error.respose && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-        })
-    }
- }
+    dispatch({
+      type: PRODUCT_DETAILS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_DETAILS_FAIL,
+      payload:
+        error.respose && error.response.data.detail
+          ? error.response.data.detail
+          : error.detail,
+    });
+  }
+};
