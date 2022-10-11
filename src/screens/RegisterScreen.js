@@ -31,7 +31,7 @@ function RegisterScreen({ location, history }) {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setMessage("Password do not match");
+      setMessage("Passwords do not match");
     } else {
       dispatch(register(name, email, password));
     }
@@ -78,7 +78,7 @@ function RegisterScreen({ location, history }) {
         </Form.Group>
 
         <Form.Group controlId="passwordConfirm">
-          <Form.Label>Comfirm Password</Form.Label>
+          <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             required
             type="password"
