@@ -6,7 +6,9 @@ function Footer() {
     <footer>
       <Container>
         <Row>
-          <Col className="text-center py-3">Made with love by Nodemads</Col>
+          <Col className="text-center py-3">
+            Made with <i class="fa fa-heart green-color"></i> by Nodemads
+          </Col>
         </Row>
       </Container>
     </footer>

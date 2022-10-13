@@ -93,7 +93,7 @@ function ProductScreen({ match, history }) {
                   />
                 </ListGroup.Item>
 
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                {/* <ListGroup.Item>Price: ${product.price}</ListGroup.Item> */}
 
                 <ListGroup.Item>
                   Description: {product.description}
@@ -108,7 +108,8 @@ function ProductScreen({ match, history }) {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>Not available yet</strong>
+                        {/* <strong>${product.price}</strong> */}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -116,7 +117,9 @@ function ProductScreen({ match, history }) {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                        {product.countInStock > 0
+                          ? "Available"
+                          : "Not Available"}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -151,7 +154,7 @@ function ProductScreen({ match, history }) {
                       disabled={product.countInStock === 0}
                       type="button"
                     >
-                      Add to Cart
+                      Add to favorites
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>

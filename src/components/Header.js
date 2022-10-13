@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="red" variant="red" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>NODEMADS</Navbar.Brand>
@@ -29,7 +29,8 @@ function Header() {
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i>Cart
+                  <i class="fa fa-heart green-color"></i>
+                  favorites
                 </Nav.Link>
               </LinkContainer>
 
