@@ -27,7 +27,13 @@ function Product({ product }) {
           </div>
         </Card.Text>
 
-        <Card.Text as="h3">{/*${product.price}*/}</Card.Text>
+        <Card.Text as="div">
+          <i class="fa fa-globe"></i>- {product.country}
+        </Card.Text>
+
+        <Card.Text as="div">
+          <i class="fas fa-map-marker-alt"></i>- {product.city}
+        </Card.Text>
       </Card.Body>
     </Card>
   );

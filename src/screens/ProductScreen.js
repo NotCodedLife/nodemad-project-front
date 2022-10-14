@@ -174,7 +174,7 @@ function ProductScreen({ match, history }) {
                   <ListGroup.Item key={review._id}>
                     <strong>{review.name}</strong>
                     <Rating value={review.rating} color="#f8e825" />
-                    <p>{review.createdAt.substring(0, 10)}</p>
+                    {/* <p>{review.createdAt.substring(0, 10)}</p>  TODO:SEACH THE BUG */}
                     <p>{review.comment}</p>
                   </ListGroup.Item>
                 ))}

@@ -21,6 +21,18 @@ function HomeScreen({ history }) {
 
   return (
     <div>
+      <section className="hero">
+        <div className="hero-center">
+          <article className="hero-info">
+            <h1>The Biggest Digital Nomad Community</h1>
+            <p>
+              Our goal is to create the greatest digital Nomad community over
+              the world
+            </p>
+          </article>
+          <article></article>
+        </div>
+      </section>
       {!keyword && <ProductCarousel />}
 
       <h1>Colivings around the world</h1>
