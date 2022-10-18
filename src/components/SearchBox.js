@@ -17,16 +17,18 @@ function SearchBox() {
   };
   return (
     <Form onSubmit={submitHandler} inline>
-      <Form.Control
-        type="text"
-        name="q"
-        onChange={(e) => setKeyword(e.target.value)}
-        className="mr-sm-2 ml-sm-5"
-      ></Form.Control>
-
-      <Button type="submit" variant="outline-success" className="p-2">
-        Search
-      </Button>
+      <div className="flex-container">
+        <Form.Control
+          type="text"
+          name="q"
+          onChange={(e) => setKeyword(e.target.value)}
+          placeholder="Search Co-living"
+          className="mr-sm-2 ml-sm-5"
+        ></Form.Control>
+        <Button type="submit" variant="btn btn-success" className="p-2">
+          search
+        </Button>
+      </div>
     </Form>
   );
 }
